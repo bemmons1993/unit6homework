@@ -1,35 +1,50 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="srEKxRt7Kxm0WFYeTutG7q3xR2He2C7S" crossorigin="anonymous">
-	<title>GifTastic</title>
-	<link rel="icon" type="image/gif" href="./image/IMG_3456.jpg"/>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+<title>GifTastic</title>
+    
+
+
 </head>
+
 <body>
 
 <div class="container">
-	<div class="styles">
-	  <h1>Animal Gifs</h1>
+    
+    <div class="styles">
+      
+        <h1>Animal Gifs</h1>
 
-	  <!-- Buttons will go Here  -->
 	  <div id="buttonsView"></div>
 
 	  <form id="express-form">
-	    <label for="express-input">Add an a car</label>
-	    <input type="text" id="express-input" >
+        
+        <label for="express-input">Search an animal</label>
+        
+        <input type="text" id="express-input" >
 	    
-	    <!-- Button triggers new gifs to be added -->
 	    <input id="addExpress" type="submit" value="Submit">
-	  </form>
+      
+    </form>
 
 
-	  <!-- Gifs will Go here -->
 	  <div id="expressView" data-state="still" ></div>
-	  </div>
-	  <div id="expressDiv"></div>
-</div> 
+      
+    </div>
+      
+      <div id="expressDiv"></div>
+
+    </div> 
+
 <script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
+
 <script type="text/javascript" src="giftastic.js"></script>
 
 </body>
+
 </html>

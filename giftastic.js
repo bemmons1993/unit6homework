@@ -1,33 +1,37 @@
 $(document).ready(function(){
-    var topics = ['cadillac', 'audi', 'jaguar', 'lamborghini', 'ferrari', 'rolls royce', 'mustang', 'dodge-challenger'];
+    var topics = ['penguin', 'mouse', 'bear', 'dolphin', 'giraffe', 'pig', 'cow', 'cobra'];
 
-    // ========================================================
-
-  //  create topics array buttons
+   
     function buttonExpress(){
+        
         $('#buttonsView').empty();
         
         for ( var i=0; i < topics.length; i++) {
-            //create all buttons
+
             var a = $('<button>');
             a.addClass('expression');
             a.attr('data-name', topics[i]);
             a.text(topics[i]);
             $('#buttonsView').append(a);
+        
         }
+    
     }    
+    
     buttonExpress();
    
 
-//on button click
+
   $(document).on('click', '.expression', function() {
 
     var animal = $(this).html(); 
+    
     console.log(animal);
     
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=srEKxRt7Kxm0WFYeTutG7q3xR2He2C7S&limit=10";
         
         $.ajax({url: queryURL, method: 'GET'})
+        
         .done(function(response) {
             
             var results = response.data;
@@ -51,15 +55,18 @@ $(document).ready(function(){
                     $('#expressView').prepend(displayRated);
             
                 }
-        }); 
+       
+            }); 
 
         function playGif() { 
                     var state = $(this).attr('data-state');
                     console.log(state);
-                 if ( state == 'still'){
+                 
+                    if ( state == 'still'){
                      $(this).attr('src', $(this).data('animate'));
                      $(this).attr('data-state', 'animate');
-                 } else {
+                 } 
+                 else {
                      $(this).attr('src', $(this).data('still'));
                      $(this).attr('data-state', 'still');
                     }
@@ -69,15 +76,21 @@ $(document).ready(function(){
     }) 
 
        $(document).on('click', '#addExpress', function(){
-    if ($('#express-input').val().trim() == ''){
-      alert('please add car');
+    
+        if ($('#express-input').val().trim() == ''){
+      
+            alert('Please add animal.');
    }
    else {
     
-    var car = $('#express-input').val().trim();
+    var animal = $('#express-input').val().trim();
+    
     topics.push(animal);
+    
     $('#express-input').val('')
+    
     buttonExpress();
+    
     return false;
 
     }
